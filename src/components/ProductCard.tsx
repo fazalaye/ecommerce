@@ -57,9 +57,6 @@ export default function ProductCard({ product, onViewProduct }: ProductCardProps
 
       {/* Content */}
       <div className="p-3">
-        {/* Seller */}
-        <p className="text-[11px] text-gray-500 mb-1">{product.sellerName}</p>
-        
         {/* Name */}
         <button
           onClick={() => onViewProduct(product)}

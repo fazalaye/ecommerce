@@ -124,9 +124,9 @@ export default function CategoryPage({ categoryId, onNavigate }: CategoryPagePro
               </div>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-gray-700 mb-3">Vendeur</h3>
+              <h3 className="text-sm font-semibold text-gray-700 mb-3">Marque</h3>
               <div className="space-y-2">
-                {['TechDakar', 'ModeSénégal', 'Beauty Africa', 'Boutique Saliou'].map(name => (
+                {['Apple', 'Samsung', 'Sony', 'Nike', 'Adidas', 'JBL'].map(name => (
                   <label key={name} className="flex items-center gap-2 text-sm text-gray-600">
                     <input type="checkbox" className="rounded border-gray-300 text-primary focus:ring-primary" />
                     {name}
@@ -147,7 +147,7 @@ export default function CategoryPage({ categoryId, onNavigate }: CategoryPagePro
                 </label>
                 <label className="flex items-center gap-2 text-sm text-gray-600">
                   <input type="checkbox" className="rounded border-gray-300 text-primary focus:ring-primary" />
-                  Vendeur vérifié
+                  Produits authentiques
                 </label>
                 <label className="flex items-center gap-2 text-sm text-gray-600">
                   <input type="checkbox" className="rounded border-gray-300 text-primary focus:ring-primary" />

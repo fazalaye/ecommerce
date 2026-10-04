@@ -45,12 +45,12 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-4">Vendeurs</h4>
+            <h4 className="text-white font-semibold mb-4">Nos engagements</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">Devenir vendeur</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Seller Central</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Guide du vendeur</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Commission & Tarifs</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Produits authentiques</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Qualité garantie</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Meilleurs prix</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Service client réactif</a></li>
             </ul>
           </div>
           <div>
@@ -111,7 +111,7 @@ export default function Footer() {
       {/* Copyright */}
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 py-4 text-center text-xs text-gray-500">
-          © 2026 SenShop. Tous droits réservés. Fait avec ❤️ au Sénégal 🇸🇳
+          © 2026 SenShop. Tous droits réservés. Votre boutique en ligne de confiance au Sénégal 🇸🇳
         </div>
       </div>
     </footer>

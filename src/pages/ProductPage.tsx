@@ -86,16 +86,6 @@ export default function ProductPage({ product, onNavigate }: ProductPageProps) {
 
         {/* Product Info */}
         <div>
-          {/* Seller */}
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-sm text-gray-500">Vendu par</span>
-            <span className="text-sm font-semibold text-primary">{product.sellerName}</span>
-            <div className="flex items-center gap-0.5">
-              <Star size={12} className="text-yellow-400 fill-yellow-400" />
-              <span className="text-xs text-gray-500">{product.sellerRating}</span>
-            </div>
-          </div>
-
           {/* Title */}
           <h1 className="text-2xl font-bold text-gray-900 mb-3">{product.name}</h1>
 
@@ -238,7 +228,7 @@ export default function ProductPage({ product, onNavigate }: ProductPageProps) {
               <Shield size={18} className="text-primary mt-0.5" />
               <div>
                 <p className="text-sm font-medium text-gray-800">Garantie SenShop</p>
-                <p className="text-xs text-gray-500">Produit authentique ou remboursé</p>
+                <p className="text-xs text-gray-500">Produit authentique vérifié ou remboursé</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -278,8 +268,9 @@ export default function ProductPage({ product, onNavigate }: ProductPageProps) {
             <div className="prose prose-sm max-w-none">
               <p className="text-gray-700 leading-relaxed">{product.description}</p>
               <p className="text-gray-600 mt-4">
-                Ce produit est vendu par <strong>{product.sellerName}</strong>, un vendeur vérifié basé à Dakar. 
-                SenShop garantit l'authenticité du produit et assure un service après-vente de qualité.
+                <strong>Garantie SenShop :</strong> Ce produit est soigneusement sélectionné et vérifié par notre équipe. 
+                Nous garantissons l'authenticité du produit et assurons un service après-vente de qualité. 
+                En cas de problème, notre support est disponible 7j/7.
               </p>
             </div>
           )}
@@ -356,7 +347,7 @@ export default function ProductPage({ product, onNavigate }: ProductPageProps) {
       {/* Related Products */}
       {relatedProducts.length > 0 && (
         <section className="mt-10">
-          <h2 className="text-xl font-bold text-gray-800 mb-5">Produits similaires</h2>
+          <h2 className="text-xl font-bold text-gray-800 mb-5">Vous aimerez aussi</h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
             {relatedProducts.map(p => (
               <ProductCard key={p.id} product={p} onViewProduct={(prod) => onNavigate('product', { product: prod })} />

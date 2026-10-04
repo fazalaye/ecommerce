@@ -62,7 +62,6 @@ export default function CartDrawer({ onCheckout }: CartDrawerProps) {
                   />
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-gray-800 line-clamp-2">{item.product.name}</p>
-                    <p className="text-xs text-gray-500 mt-0.5">{item.product.sellerName}</p>
                     <p className="text-sm font-bold text-primary mt-1">{formatPrice(item.product.price)}</p>
                     <div className="flex items-center justify-between mt-2">
                       <div className="flex items-center gap-1">
