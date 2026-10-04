@@ -1,4 +1,4 @@
-import { TrendingUp, Truck, Shield, Clock, ArrowRight, Star } from 'lucide-react';
+import { TrendingUp, Truck, Shield, Clock, ArrowRight } from 'lucide-react';
 import HeroBanner from '../components/HeroBanner';
 import ProductCard from '../components/ProductCard';
 import { products, Product } from '../data/products';
@@ -80,7 +80,7 @@ export default function HomePage({ onNavigate, searchQuery }: HomePageProps) {
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <span className="text-2xl">⚡</span>
-                <h2 className="text-xl font-bold text-white">Ventes Flash</h2>
+                <h2 className="text-xl font-bold text-white">Offres du moment</h2>
                 <span className="px-2 py-0.5 bg-white/20 text-white text-xs rounded-full">
                   Se termine dans 05:23:41
                 </span>
@@ -102,10 +102,13 @@ export default function HomePage({ onNavigate, searchQuery }: HomePageProps) {
       <section className="max-w-7xl mx-auto px-4 mt-10">
         <div className="flex items-center justify-between mb-5">
           <h2 className="text-xl font-bold text-gray-800">
-            {searchQuery ? `Résultats pour "${searchQuery}"` : 'Produits en vedette'}
+            {searchQuery ? `Résultats pour "${searchQuery}"` : '🛍️ Nos produits'}
           </h2>
           {!searchQuery && (
-            <button className="text-sm text-primary font-medium flex items-center gap-1 hover:underline">
+            <button
+              onClick={() => onNavigate('categories')}
+              className="text-sm text-primary font-medium flex items-center gap-1 hover:underline"
+            >
               Voir tout <ArrowRight size={14} />
             </button>
           )}
@@ -128,41 +131,27 @@ export default function HomePage({ onNavigate, searchQuery }: HomePageProps) {
         )}
       </section>
 
-      {/* Top Sellers */}
+      {/* Why choose us */}
       {!searchQuery && (
         <section className="max-w-7xl mx-auto px-4 mt-10">
           <div className="flex items-center justify-between mb-5">
-            <h2 className="text-xl font-bold text-gray-800">Meilleurs vendeurs</h2>
+            <h2 className="text-xl font-bold text-gray-800">💚 Pourquoi nous faire confiance ?</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {[
-              { name: 'TechDakar', rating: 4.8, reviews: 342, city: 'Dakar', products: 156, verified: true },
-              { name: 'Beauty Africa', rating: 4.9, reviews: 1203, city: 'Dakar', products: 312, verified: true },
-              { name: 'ModeSénégal', rating: 4.6, reviews: 891, city: 'Dakar', products: 423, verified: true },
-            ].map((seller, idx) => (
-              <div key={idx} className="flex items-center gap-4 p-4 bg-white rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
-                <div className="w-14 h-14 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold text-lg">
-                  {seller.name[0]}
+              { emoji: '✅', title: 'Produits 100% authentiques', desc: 'Tous nos produits sont soigneusement sélectionnés et vérifiés.' },
+              { emoji: '🚀', title: 'Livraison ultra-rapide', desc: 'Recevez vos commandes en 24h à Dakar, 48-72h dans les autres villes.' },
+              { emoji: '💰', title: 'Meilleurs prix garantis', desc: 'Nous négocions les meilleurs prix pour vous offrir des tarifs imbattables.' },
+              { emoji: '🔒', title: 'Paiement sécurisé', desc: 'Payez en toute confiance avec Wave, Orange Money, Free Money ou CB.' },
+              { emoji: '↩️', title: 'Retours faciles', desc: 'Pas satisfait ? Retournez votre produit gratuitement sous 7 jours.' },
+              { emoji: '💬', title: 'Support réactif', desc: 'Notre équipe est disponible 7j/7 par WhatsApp et téléphone.' },
+            ].map((item, idx) => (
+              <div key={idx} className="flex items-start gap-4 p-5 bg-white rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+                <span className="text-3xl">{item.emoji}</span>
+                <div>
+                  <h3 className="font-semibold text-gray-800 mb-1">{item.title}</h3>
+                  <p className="text-sm text-gray-500">{item.desc}</p>
                 </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-2">
-                    <h3 className="font-semibold text-gray-800">{seller.name}</h3>
-                    {seller.verified && <span className="text-xs bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded">✓ Vérifié</span>}
-                  </div>
-                  <div className="flex items-center gap-2 mt-1">
-                    <div className="flex items-center gap-0.5">
-                      <Star size={12} className="text-yellow-400 fill-yellow-400" />
-                      <span className="text-xs font-medium">{seller.rating}</span>
-                    </div>
-                    <span className="text-xs text-gray-400">({seller.reviews} avis)</span>
-                    <span className="text-xs text-gray-400">•</span>
-                    <span className="text-xs text-gray-500">{seller.city}</span>
-                  </div>
-                  <p className="text-xs text-gray-500 mt-0.5">{seller.products} produits</p>
-                </div>
-                <button className="px-3 py-1.5 border border-primary text-primary text-xs font-medium rounded-lg hover:bg-primary hover:text-white transition-colors">
-                  Voir
-                </button>
               </div>
             ))}
           </div>
@@ -174,15 +163,17 @@ export default function HomePage({ onNavigate, searchQuery }: HomePageProps) {
         <section className="max-w-7xl mx-auto px-4 mt-10">
           <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
-              <h3 className="text-2xl font-bold text-white mb-2">Téléchargez l'app SenShop</h3>
-              <p className="text-gray-400">Achetez plus facilement depuis votre téléphone. Notifications en temps réel, offres exclusives.</p>
+              <h3 className="text-2xl font-bold text-white mb-2">📱 Restez informé de nos offres</h3>
+              <p className="text-gray-400">Inscrivez-vous à notre newsletter et recevez nos meilleures promotions en avant-première.</p>
             </div>
-            <div className="flex gap-3">
-              <button className="px-5 py-3 bg-white text-gray-900 rounded-xl font-medium text-sm hover:bg-gray-100 transition-colors">
-                📱 App Store
-              </button>
-              <button className="px-5 py-3 bg-white text-gray-900 rounded-xl font-medium text-sm hover:bg-gray-100 transition-colors">
-                🤖 Google Play
+            <div className="flex flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                placeholder="Votre email..."
+                className="px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:bg-white/20"
+              />
+              <button className="px-5 py-3 bg-secondary text-gray-900 rounded-xl font-bold text-sm hover:bg-secondary-dark transition-colors">
+                S'inscrire ✉️
               </button>
             </div>
           </div>

@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const banners = [
   {
     title: 'Méga Soldes d\'Été',
-    subtitle: 'Jusqu\'à -50% sur l\'électronique',
+    subtitle: 'Jusqu\'à -50% sur l\'électronique • Livraison 24h à Dakar',
     cta: 'Découvrir',
     bg: 'from-primary via-primary-dark to-emerald-900',
     emoji: '🔥',
@@ -18,14 +18,14 @@ const banners = [
   },
   {
     title: 'Artisanat Sénégalais',
-    subtitle: 'Découvrez le savoir-faire local',
+    subtitle: 'Découvrez notre sélection de produits locaux authentiques',
     cta: 'Explorer',
     bg: 'from-amber-600 via-orange-600 to-red-700',
     emoji: '🎨',
   },
   {
     title: 'Nouveautés Mode',
-    subtitle: 'Collection Wax 2026 disponible',
+    subtitle: 'Collection Wax 2026 disponible • Qualité garantie',
     cta: 'Voir la collection',
     bg: 'from-pink-600 via-purple-600 to-indigo-700',
     emoji: '✨',

@@ -30,12 +30,12 @@ export default function Header({ currentPage, onNavigate, searchQuery, onSearchC
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1">
               <MapPin size={12} />
-              Livraison partout au Sénégal
+              Livraison partout au Sénégal 🇸🇳
             </span>
-            <span className="hidden sm:inline">🇸🇳 Paiement: Wave • Orange Money • Free Money</span>
+            <span className="hidden sm:inline">Paiement : Wave • Orange Money • Free Money • CB</span>
           </div>
           <div className="flex items-center gap-3">
-            <button className="hover:text-secondary transition-colors">Devenir vendeur</button>
+            <button className="hover:text-secondary transition-colors">📞 +221 77 123 45 67</button>
             <span className="hidden sm:inline">|</span>
             <button className="hidden sm:inline hover:text-secondary transition-colors">Aide</button>
           </div>
@@ -56,7 +56,7 @@ export default function Header({ currentPage, onNavigate, searchQuery, onSearchC
             <div className="hidden sm:block">
               <span className="text-xl font-bold text-primary">Sen</span>
               <span className="text-xl font-bold text-gray-800">Shop</span>
-              <p className="text-[10px] text-gray-500 -mt-1">La marketplace du Sénégal</p>
+              <p className="text-[10px] text-gray-500 -mt-1">La boutique en ligne du Sénégal</p>
             </div>
           </button>
 
