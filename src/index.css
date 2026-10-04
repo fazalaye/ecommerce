@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #008751;
+  --color-primary-dark: #006b40;
+  --color-primary-light: #00a86b;
+  --color-secondary: #FEDD00;
+  --color-secondary-dark: #e6c800;
+  --color-accent: #E31B23;
+  --color-surface: #f8fafc;
+  --color-surface-dark: #f1f5f9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-badge {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+.animate-pulse-badge {
+  animation: pulse-badge 0.3s ease-out;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #008751 0%, #00a86b 100%);
+}
+.bg-gradient-hero {
+  background: linear-gradient(135deg, #008751 0%, #006b40 50%, #004d2e 100%);
+}
+
+/* Product card hover */
+.product-card {
+  transition: all 0.2s ease;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Category card */
+.category-card {
+  transition: all 0.2s ease;
+}
+.category-card:hover {
+  transform: scale(1.05);
+}
